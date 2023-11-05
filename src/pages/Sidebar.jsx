@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import { MdDashboard, MdPermContactCalendar } from "react-icons/md";
+import {
+  MdDashboard,
+  MdPermContactCalendar
+} from "react-icons/md";
 import { BiSolidWalletAlt, BiDollar, BiSolidUser } from "react-icons/bi";
 import { AiFillFileText } from "react-icons/ai";
+
 const Sidebar = () => {
   const [activeItem, setActiveItem] = useState("Dashboard");
 
@@ -16,10 +20,10 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sidebar w-2/12 shadow-md">
+    <div className="sidebar w-2/12 lg:w-1/6 shadow-md">
       <div>
         <img
-          className="p-5"
+          className="p-5 mx-auto"
           src="https://desk.assiduus.in/content/images/2023/08/Assiduus_TM_Logo--1-.png"
           alt="logo"
         />
@@ -33,11 +37,11 @@ const Sidebar = () => {
                   activeItem === item.label
                     ? "bg-green-500 text-white"
                     : "hover:bg-green-500 hover:text-white"
-                } my-3 py-3 cursor-pointer flex items-center justify-start pl-4`}
+                } my-3 py-3 cursor-pointer flex items-center justify-center lg:justify-start pl-4`}
                 onClick={() => setActiveItem(item.label)}
               >
                 {item.icon}
-                <span className="ml-2">{item.label}</span>
+                <span className="hidden lg:inline ml-2">{item.label}</span>
               </h3>
             </li>
           ))}
